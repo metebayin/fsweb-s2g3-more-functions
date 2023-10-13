@@ -15,11 +15,13 @@
   örnek input:  ""
   örnek output: ""
 */
+let path= "Beethoven_5.mp3"
 
-function dosyaAdiniBul(/* kodlar buraya */) {
-  // kodlar buraya
+function dosyaAdiniBul() {
+ let result= path.split("/")
+ return result[result.length-1] 
 }
-
+console.log(dosyaAdiniBul(path))
 /*
   GÖREV 2
   - Input:  Bir sayı arrayini parametre olarak alacak bir fonksiyon oluştur.
@@ -37,10 +39,17 @@ function dosyaAdiniBul(/* kodlar buraya */) {
   örnek input:  [109, 216, 288, 143, 71, 185, -278, 194, 5]
   örnek output: 104
 */
-
-function ortalamaBul(/* kodlar buraya */) {
-  // kodlar buraya
+let sayidizisi = [109, 216, 288, 143, 71, 185, -278, 194, 5]
+function ortalamaBul(sayidizisi) {
+  if(sayidizisi.length == 0){
+    return null
+  }
+  let toplam = sayidizisi.reduce((total,item)=>{return total + item},0)
+  let ortalama = toplam / sayidizisi.length
+  return ortalama  
 }
+console.log (ortalamaBul(sayidizisi));
+
 
 /*
   GÖREV 3
@@ -62,8 +71,19 @@ function ortalamaBul(/* kodlar buraya */) {
   örnek output: [109, 216, 288, 143, 185, 194]
 */
 
-function ortalamadanBuyukleriBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamadanBuyukleriBul(sayilar,ortalama) {
+  if(sayilar.length ==0){
+    return null
+    
+  }
+  let avg = ortalama(sayilar)
+  let result = []
+  sayilar.forEach(element => {
+    if (element >= avg){
+      result.push(element)  
+    }
+  });
+  return result 
 }
 
 /* !!!! Burdan aşağısını değiştirmeyin !!!! */
